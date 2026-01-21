@@ -1,22 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title></title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="/assets/stylesheet.css">
-   </head>
-   <body>
-      <main>
-         <h1>Live Coding!</h1>
-         
-      </main>
-      <script src="/assets/script.js" async defer></script>
-   </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+
+    <!-- <link rel="stylesheet" href="/assets/stylesheet.css" /> -->
+     <style>
+         h1 {
+            font-size: larger;
+         }
+
+         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1f4cdf;
+         }
+
+         /* first way */
+         /* .rectangle {
+            background: #d9d9d9;
+            width: 200px;
+            height: 100px;
+         } */
+
+         /* 2nd way */
+         .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+         .rectangle {
+            background: #d9d9d9;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            margin: 30px 0 30px;
+         }
+
+         .menu-icon {
+            color: black
+         }
+
+         span.notification::before {
+            content: "🔔";
+            font-size: 24px;
+            margin-right: 10px;
+         }
+
+         div.logo {
+            font-weight: bold;
+            color: rgb(130, 130, 130);
+         }
+
+         div.sample {
+            color: #fff;
+         }
+         #form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+         }
+         form {
+            width: 300px;
+            margin: 5px 0 auto;
+         }
+
+         .navigation {
+            display: flex;
+            gap: 20px;
+         }
+     </style>
+  </head>
+  <body>
+    <main>
+      <h1>Live Coding!</h1>
+      <header>
+         <div class="navigation"></div>
+            <div class="logo">logo</div>
+            <div class="sample">sample 1</div>
+            <div class="sample">sample 2</div>
+            <div class="sample">sample 3</div>
+            <div class="sample">sample 4</div>
+         </div>
+         <div class="menu-icon">
+               <span class="notification"></span>
+               <span class="user"></span>
+               <span class="avatar"></span>
+         </div>     
+      </header>
+      <section id="hello-world">
+        <div>
+          <div class="container">
+            <div class="rectangle">Hello World!</div>
+          </div>
+        </div>
+      </section>
+      <section id="form">
+         <form>
+            <input id="first-name" type="text" placeholder="Enter your first name" />
+            <input id="last-name" type="text" placeholder="Enter your last name" />
+            <input id="email" type="email" placeholder="Enter your email" />
+            <input id="password" type="password" placeholder="Enter your password" />
+            <input id="confirm-password" type="password" placeholder="Confirm password" />
+            <button id="submit">Submit</button>
+         </form>
+      <section>
+    </main>
+    <script async defer>
+      $(document).ready(function() {
+         const firstName = $("#first-name").val();
+         const lastName = $('#last-name').val();
+         const email = $('#email').val();
+         const password = $('#password').val();
+         const confirmPassword = $('#confirm-password').val();
+         console.log(firstName, lastName, email, password, confirmPassword);
+        $('#submit').click(function (e) {
+          e.preventDefault();
+          alert('Form submitted!', {firstName, lastName, email, password, confirmPassword});
+        });
+      });
+    </script>
+  </body>
 </html>
